@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default  function Counter()
 
 {
@@ -15,18 +15,16 @@ const [count, setCount] = useState(0);
   }
 
    return(
-    <div className="Container" style={{height:"100vh"}}>
+    <div className="d-flex my -3 justify-content-center text-bg-secondary bg-opacity:0.5 align-items-center"  style={{height:"100vh"}}>
       <div>
         <h1 className='text-center' style={{fontSize: "50px"}}>{count} </h1>
         <div className="d-flex my-3">
-          <button  onClick={handleIncrement} className='btn btn success '>Increment</button>
-          <button  onClick={handleDecrement} className='btn btn primary'>Decrement</button>
+          <button  onClick={handleIncrement} className='btn btn black border border-white me-1 text-bg-dark'>Increment</button>
+          <button  onClick={handleDecrement} className='btn btn black  border border-white mr-1 text-bg-dark'>Decrement</button>
         </div>
       </div>
     </div>
     
     
     )
-    
-    
-  }
+     }
