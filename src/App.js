@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+export default  function Counter()
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+{
+const [count, setCount] = useState(0);
+
+  const handleIncrement=()=>{
+    setCount(count+1)
+  }
+
+  const handleDecrement=()=>{
+    if (count>0)
+    setCount(count-1)
+  }
+
+   return(
+    <div className="Container" style={{height:"100vh"}}>
+      <div>
+        <h1 className='text-center' style={{fontSize: "50px"}}>{count} </h1>
+        <div className="d-flex my-3">
+          <button  onClick={handleIncrement} className='btn btn success '>Increment</button>
+          <button  onClick={handleDecrement} className='btn btn primary'>Decrement</button>
+        </div>
+      </div>
     </div>
-  );
-}
-
-export default App;
+    
+    
+    )
+    
+    
+  }
